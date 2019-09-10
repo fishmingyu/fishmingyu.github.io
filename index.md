@@ -33,15 +33,6 @@ I love using this web to show my recent researches.
     <div id='footer'>
       Copyright &copy; 2019 fishming. Theme and code by <a href="http://github.com/mbleigh">fishming</a>. Hosted by <a href='fishming.cn' target='_blank'>GitHub</a> and powered by <a href='http://github.com/mojombo/jekyll'>Jekyll</a>.
     </div>
-    <script type="text/javascript">
-      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-    </script>
-    <script type="text/javascript">
-      try {
-        var pageTracker = _gat._getTracker("UA-82337-14");
-        pageTracker._trackPageview();
-        } catch(err) {}</script>
   </body>
 </html>
 
