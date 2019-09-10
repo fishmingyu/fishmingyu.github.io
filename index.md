@@ -23,15 +23,14 @@ I love using this web to show my recent researches.
     </div>
     <div class="related">
       <h3>Related Posts</h3>
-      <table class="post-list">
-        {% for post in site.related_posts limit:3 %}
-          <tr>
-            <th><a href='{{ post.url }}'>{{ post.title }}</a></th>
-            <td>{{ post.date | date_to_string }}</td>
-            <td><a href='{{post.url}}#disqus_thread'>Comments</a></td>
-          </tr>
+      <ul>
+        {% for post in site.posts %}
+        <li>
+          <a href="{{ post.url }}">{{ post.title }}</a>
+          <p>{{ post.excerpt }}</p>
+        </li>
         {% endfor %}
-      </table>
+      </ul>
     </div>
     <div id='footer'>
       Copyright &copy; 2019 fishming. Theme and code by <a href="http://github.com/fishmingyu">fishming</a>. Hosted by <a href='fishming.cn' target='_blank'>GitHub</a> and powered by <a href='http://github.com/mojombo/jekyll'>Jekyll</a>.
