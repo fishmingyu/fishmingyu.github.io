@@ -4,6 +4,11 @@ title: The first try
 
 ---
 
+<html>
+  <head>
+    <title>{{ title }}</title>
+  </head>
+</html>
 # 2019北大综合营数学第5题
 
 > 题目：
