@@ -1,3 +1,7 @@
+---
+layout: home
+---
+
 # Welcome to Fishming's blog
 This is my blog powered by 
 I love using this web to show my recent researches.
