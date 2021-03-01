@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "2020-3-1 weekly post for NICS"
-date:   2021-03-1 21:03:36 +0530
-categories: CUDA PyTorch GPU sparse
+date:   2021-03-1 20:14:36 +0530
+categories: weekly
 ---
 Weekly post for NICS EFC.
 ### Paper read for last week
@@ -11,16 +11,16 @@ Weekly post for NICS EFC.
 - [x] spECK: Accelerating GPU Sparse Matrix-Matrix Multiplication through Lightweight Analysis, PPoPP, 20 
 - [x] (bhSparse) An Efficient GPU General Sparse Matrix-Matrix Multiplication for Irregular Data, IPDPS, 14 
 - [x] Optimization of GPU-based Sparse Matrix Multiplication for Large Sparse Networks, ICDE, 20
-- [x] A framework for general sparse matrix–matrix multiplication on GPUs and heterogeneous processors，J. Parallel Distrib. Comput. 15
+- [x] A framework for general sparse matrix–matrix multiplication on GPUs and heterogeneous processors, J. Parallel Distrib. Comput. 15
 
 ### Reading list for this week
 
-- [] Sparse Tensor Core: Algorithm and Hardware Co-Design for
+- [ ] Sparse Tensor Core: Algorithm and Hardware Co-Design for
 Vector-wise Sparse Neural Networks on Modern GPUs, MICRO, 19
-- [] 
-- [] 
-- [] 
-- [] 
+- [ ] DistDGL: Distributed Graph Neural Network Training for Billion-Scale Graphs
+- [ ] 
+- [ ] 
+- [ ] 
 
 ### Important websites and blogs
 Check out the [CUDA sparseLt's blog][sparseLt-blog] for more info on how CUDA accerlate spGEMM by using new Tensor core instruction.
