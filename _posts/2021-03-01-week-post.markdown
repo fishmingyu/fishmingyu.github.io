@@ -24,7 +24,7 @@ Vector-wise Sparse Neural Networks on Modern GPUs, MICRO, 19
 ### Important websites and blogs
 Check out the [CUDA sparseLt's blog][sparseLt-blog] for more info on how CUDA accerlate spGEMM by using new Tensor core instruction.
 
-Now I collaborate with team [Jekyll’s GitHub repo][cogdl]. If you have any questions about kernels in cogdl, feel free to ask in [issues][cogdl-comment].
+Now I collaborate with team [cogdl][cogdl]. If you have any questions about kernels in cogdl, feel free to ask in [issues][cogdl-comment].
 
 [sparseLt-blog]: https://developer.nvidia.com/blog/exploiting-ampere-structured-sparsity-with-cusparselt/
 [cogdl]:   https://github.com/THUDM/cogdl
