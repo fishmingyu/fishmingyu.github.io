@@ -9,8 +9,10 @@ Weekly post for NICS EFC.
 - [x] Sparse Tensor Core: Algorithm and Hardware Co-Design for
 Vector-wise Sparse Neural Networks on Modern GPUs, MICRO, 19
 - [x] A comparative study of similarity-based and GNN-based link prediction approaches
-- [x] Efficient Merge, Search, and Set Operations on GPUs | GTC 2013
+- [x] Efficient Merge, Search, and Set Operations on GPUs, GTC 2013
 
 ### Reading list for this week
 - [ ] DistDGL: Distributed Graph Neural Network Training for Billion-Scale Graphs
 - [ ] Understanding and bridging the gaps in current GNN performance optimizations, PPoPP, 21
+### Pull request
+[PR_in_cogdl](https://github.com/THUDM/cogdl/pull/203)
