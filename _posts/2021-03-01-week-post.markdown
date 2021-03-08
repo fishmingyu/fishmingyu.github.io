@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "2020-3-1 weekly post for NICS"
+title:  "2020-3-1 weekly post for NICS-EFC"
 date:   2021-03-1 20:14:36 +0530
-categories: weekly
+categories: weekly 
 ---
 Weekly post for NICS EFC.
 ### Paper read for last week
