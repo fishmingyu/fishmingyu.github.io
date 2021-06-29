@@ -26,6 +26,8 @@ plainwhite:
       url: "/my-work"
     - title: Resume
       url: "/resume"
+    - title: dgSparse
+      url: "/dgSparse"
   condensed_mobile:
     - home
     - page
