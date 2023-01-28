@@ -1,1 +1,2 @@
-Personal blog
+Personal Website
+*TODO* Update CV
