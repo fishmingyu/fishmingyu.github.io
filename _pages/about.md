@@ -20,8 +20,8 @@ I am a third-year Ph.D. advised by Prof. [Jishen Zhao](https://cseweb.ucsd.edu/~
 I have a broad interest in combining machine learning and computer systems, with a special focus on the interaction between ML and System. I have previously focused on more acceleration for sparse computing (e.g. GNN, Pointcloud acceleration) and devoted myself to some open-source projects like [dgSPARSE](https://dgsparse.github.io/) and [CogDL](https://cogdl.ai/). Now I am working on agent framework that could help design better system, especially moving to MLsys self-evolution. Some topics that I have been working on are listed below:
 
 - LLM Agent System for MLSys
-- High-performance GPU Kernels
 - Machine Learning Compiler
+- High-performance GPU Kernels
 - Autonomous Software Engineering (SWEBench)
 
 Feel free to contact me if you share any common interests.
