@@ -90,9 +90,11 @@ jobs:
           pip3 install --upgrade nbconvert
           export JEKYLL_ENV=production
           bundle exec jekyll build
-      - name: deploy 🚀
-        url: ${{ steps.deployment.outputs.page_url }}
+      - name: Upload GitHub Pages artifact 📦
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages 🚀
         id: deployment
         uses: actions/deploy-pages@v4
-        with:
-          folder: _site
