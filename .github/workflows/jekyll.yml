@@ -65,6 +65,9 @@ permissions:
 jobs:
   deploy:
     # available images: https://github.com/actions/runner-images#available-images
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
