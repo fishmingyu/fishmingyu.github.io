@@ -1,0 +1,16 @@
+services:
+  - title: "Research Consulting"
+    description: "ML systems architecture and optimization"
+    icon: "fas fa-microscope"
+    
+  - title: "Code Review"
+    description: "High-performance GPU kernel optimization"
+    icon: "fas fa-code"
+    
+  - title: "System Design"
+    description: "Scalable ML infrastructure planning"
+    icon: "fas fa-sitemap"
+    
+  - title: "Technical Writing"
+    description: "Academic papers and technical documentation"
+    icon: "fas fa-edit"

@@ -6,7 +6,7 @@ subtitle: <a href='https://cse.ucsd.edu/'>UCSD CSE</a>. Ph.D.
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: image.png
   image_circular: false # crops the image to make it circular
   address: >
     <p>San Diego, California</p>
