@@ -1,38 +1,92 @@
 /*******************************************************************************
  * Variables used throughout the theme.
- * To adjust anything, simply edit the variables below and rebuild the theme.
+ *
+ * The palette below is a "systems / terminal" scheme: a near-black canvas, a
+ * single teal accent for interactive and structural elements, and amber
+ * reserved for timestamps and venue metadata. Light mode is a warm paper tone
+ * rather than pure white so the two modes feel like one design.
  ******************************************************************************/
 
 
-// Colors
+// -----------------------------------------------------------------------------
+// Palette -- dark (default)
+// -----------------------------------------------------------------------------
+
+$d-bg:            #0b0e14 !default;  // page canvas
+$d-bg-elev:       #10141c !default;  // nav, footer
+$d-surface:       #141922 !default;  // cards, code blocks
+$d-surface-hi:    #1b212c !default;  // hovered cards
+$d-border:        #222a36 !default;
+$d-border-hi:     #33404f !default;
+$d-text:          #d6dde8 !default;
+$d-text-dim:      #8b96a7 !default;
+$d-text-faint:    #5c6675 !default;
+$d-accent:        #4fd6be !default;  // teal -- links, active nav, rules
+$d-accent-hi:     #7ce8d4 !default;
+$d-accent-soft:   rgba(79, 214, 190, 0.12) !default;
+$d-amber:         #e6b450 !default;  // dates, venue tags
+
+// -----------------------------------------------------------------------------
+// Palette -- light
+// -----------------------------------------------------------------------------
+
+$l-bg:            #fbfaf7 !default;  // warm paper, not pure white
+$l-bg-elev:       #ffffff !default;
+$l-surface:       #f4f2ec !default;
+$l-surface-hi:    #eeebe2 !default;
+$l-border:        #e0dcd2 !default;
+$l-border-hi:     #c5bfb1 !default;
+$l-text:          #16191d !default;
+$l-text-dim:      #59616d !default;
+$l-text-faint:    #878e99 !default;
+$l-accent:        #0c8d7b !default;
+$l-accent-hi:     #0a6d5f !default;
+$l-accent-soft:   rgba(12, 141, 123, 0.10) !default;
+$l-amber:         #9a6612 !default;
+
+// -----------------------------------------------------------------------------
+// Type
+// -----------------------------------------------------------------------------
+
+$font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo,
+            Consolas, "Liberation Mono", monospace !default;
+$font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+            "Helvetica Neue", Arial, sans-serif !default;
+
+
+// -----------------------------------------------------------------------------
+// Legacy al-folio variables
+//
+// _base.scss, _distill.scss and the Bootstrap overrides still reference these
+// by name. They are kept so the theme keeps compiling; prefer the CSS custom
+// properties defined in _themes.scss for anything new.
+// -----------------------------------------------------------------------------
+
 $red-color:           #FF3636 !default;
 $red-color-dark:      #B71C1C !default;
 $orange-color:        #F29105 !default;
 $blue-color:          #0076df !default;
 $blue-color-dark:     #00369f !default;
 $cyan-color:          #2698BA !default;
-$light-cyan-color:    lighten($cyan-color, 25%);
+$light-cyan-color:    #8ecfe3 !default;  // was lighten($cyan-color, 25%)
 $green-color:         #00ab37 !default;
 $green-color-lime:    #B7D12A !default;
 $green-color-dark:    #009f06 !default;
 $green-color-light:   #ddffdd !default;
 $green-color-bright:  #11D68B !default;
 $purple-color:        #B509AC !default;
-$light-purple-color:  lighten($purple-color, 25%);
+$light-purple-color:  #f846ef !default;  // was lighten($purple-color, 25%)
 $pink-color:          #f92080 !default;
 $pink-color-light:    #ffdddd !default;
 $yellow-color:        #efcc00 !default;
 
 $grey-color:          #828282 !default;
-$grey-color-light:    lighten($grey-color, 40%);
+$grey-color-light:    #e8e8e8 !default;  // was lighten($grey-color, 40%)
 $grey-color-dark:     #1C1C1D;
 $grey-900:            #212529;
 
 $white-color: #ffffff !default;
 $black-color: #000000 !default;
 
-
-// Theme colors
-
-$code-bg-color-light:     rgba($purple-color, 0.05);
-$code-bg-color-dark:      #2c3237 !default;
+$code-bg-color-light:     $l-surface;
+$code-bg-color-dark:      $d-surface;

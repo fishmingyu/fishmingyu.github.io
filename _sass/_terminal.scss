@@ -1,0 +1,980 @@
+/*******************************************************************************
+ * Terminal / systems theme.
+ *
+ * Loaded after _base.scss so everything here wins over the stock al-folio and
+ * Bootstrap rules. Organised by component, roughly top-to-bottom as the page
+ * renders: type -> chrome -> hero -> content blocks -> footer.
+ ******************************************************************************/
+
+// -----------------------------------------------------------------------------
+// Type
+// -----------------------------------------------------------------------------
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: $font-sans;
+  font-size: 1rem;
+  line-height: 1.65;
+  letter-spacing: -0.003em;
+  background-color: var(--global-bg-color);
+  color: var(--global-text-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-mono;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+// Section headings read as terminal prompts: a dim caret, then the label.
+.post > article > h2,
+.page-content > h2 {
+  font-size: 0.95rem;
+  text-transform: lowercase;
+  letter-spacing: 0.08em;
+  color: var(--global-text-color-light);
+  margin-top: 3.5rem;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+
+  a { color: inherit; }
+
+  &::before {
+    content: "//";
+    color: var(--global-theme-color);
+    font-weight: 700;
+  }
+
+  &::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--global-divider-color);
+  }
+}
+
+::selection {
+  background: var(--global-accent-soft);
+  color: var(--global-text-color);
+}
+
+// Focus ring -- Bootstrap's default glow does not fit the palette.
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid var(--global-theme-color);
+  outline-offset: 2px;
+  box-shadow: none;
+}
+
+a {
+  color: var(--global-theme-color);
+  text-decoration: none;
+  transition: color 0.15s ease;
+
+  &:hover {
+    color: var(--global-hover-color);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: 1px;
+  }
+}
+
+code {
+  font-family: $font-mono;
+  font-size: 0.86em;
+  color: var(--global-text-color);
+  background-color: var(--global-surface-color);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 4px;
+  padding: 0.12em 0.38em;
+}
+
+pre {
+  font-family: $font-mono;
+  color: var(--global-text-color);
+  background-color: var(--global-surface-color);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 8px;
+  padding: 0.9rem 1.1rem;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  overflow-x: auto;
+
+  code {
+    border: 0;
+    padding: 0;
+    background: transparent;
+    font-size: inherit;
+  }
+}
+
+blockquote {
+  background: var(--global-surface-color);
+  border-left: 2px solid var(--global-theme-color);
+  border-radius: 0 6px 6px 0;
+  margin: 1.5rem 0;
+  padding: 0.85rem 1.1rem;
+  font-size: 1rem;
+  color: var(--global-text-color-light);
+}
+
+hr {
+  border-top: 1px solid var(--global-divider-color);
+}
+
+// -----------------------------------------------------------------------------
+// Navbar
+// -----------------------------------------------------------------------------
+
+.navbar {
+  background-color: var(--global-bg-elevated);
+  border-bottom: 1px solid var(--global-divider-color);
+  opacity: 1;
+  // `body.fixed-top-nav` in _layout.scss reserves exactly 56px; pin the bar to
+  // that height so the two never drift apart.
+  min-height: 56px;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+}
+
+.navbar.navbar-light {
+  .navbar-brand {
+    font-family: $font-mono;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--global-text-color);
+
+    .font-weight-bold { font-weight: 700; }
+  }
+
+  .navbar-nav .nav-item .nav-link {
+    font-family: $font-mono;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-transform: lowercase;
+    color: var(--global-text-color-light);
+    padding: 0.35rem 0.7rem;
+    border-radius: 5px;
+    transition: color 0.15s ease, background-color 0.15s ease;
+
+    &:hover {
+      color: var(--global-text-color);
+      background-color: var(--global-surface-color);
+    }
+  }
+
+  .navbar-nav .nav-item.active > .nav-link {
+    font-weight: 600;
+    color: var(--global-theme-color);
+    background-color: var(--global-accent-soft);
+
+    &:hover { color: var(--global-theme-color); }
+  }
+}
+
+.navbar .dropdown-menu {
+  background-color: var(--global-bg-elevated);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 8px;
+  box-shadow: var(--global-shadow-lg);
+  font-family: $font-mono;
+  font-size: 0.82rem;
+}
+
+// Theme toggle. al-folio positioned the icon with hard-coded padding tuned to
+// its own navbar; centre it with flexbox instead so it tracks any nav height.
+.navbar-nav .toggle-container {
+  display: flex;
+  align-items: center;
+  margin-left: 0.35rem;
+}
+
+#light-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background-color: transparent;
+  color: var(--global-text-color-light);
+  cursor: pointer;
+  transition: color 0.15s ease, background-color 0.15s ease,
+              border-color 0.15s ease;
+
+  i {
+    // The theme mixins flip these between `block` and `none`; neutralise the
+    // inherited line-height so either glyph lands on the same optical centre.
+    font-size: 0.85rem;
+    line-height: 1;
+  }
+
+  &:hover {
+    color: var(--global-theme-color);
+    background-color: var(--global-surface-color);
+    border-color: var(--global-divider-color);
+  }
+}
+
+@media (max-width: 575px) {
+  // Collapsed menu: the nav stacks, so left-align the toggle with the links.
+  .navbar-nav .toggle-container {
+    justify-content: flex-end;
+    margin-left: 0;
+    padding: 0.35rem 0.7rem 0 0;
+  }
+}
+
+progress,
+.progress-container { top: 56px; }
+
+// -----------------------------------------------------------------------------
+// About page: hero
+// -----------------------------------------------------------------------------
+
+.hero {
+  padding: 3.5rem 0 2.5rem;
+  border-bottom: 1px solid var(--global-divider-color);
+  margin-bottom: 2.5rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 216px;
+  gap: 3rem;
+  align-items: start;
+}
+
+.hero__name {
+  font-family: $font-mono;
+  font-size: clamp(1.7rem, 5.5vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+  margin: 0 0 0.9rem;
+  color: var(--global-text-color);
+
+  // Blinking block caret, the one bit of motion on the page.
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 0.5em;
+    height: 0.92em;
+    margin-left: 0.18em;
+    vertical-align: -0.08em;
+    background: var(--global-theme-color);
+    animation: hero-caret 1.15s step-end infinite;
+  }
+}
+
+@keyframes hero-caret {
+  0%, 45%  { opacity: 1; }
+  46%, 100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__name::after { animation: none; }
+}
+
+// "role @ org · advisor" strip under the name.
+.hero__meta {
+  font-family: $font-mono;
+  font-size: 0.82rem;
+  color: var(--global-text-color-light);
+  margin-bottom: 1.4rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem 0.6rem;
+
+  a {
+    color: var(--global-text-color);
+    border-bottom: 1px solid var(--global-divider-strong);
+    &:hover {
+      color: var(--global-theme-color);
+      border-bottom-color: var(--global-theme-color);
+      text-decoration: none;
+    }
+  }
+
+  .sep { color: var(--global-text-color-faint); }
+}
+
+.hero__tagline {
+  font-size: 1.12rem;
+  line-height: 1.55;
+  color: var(--global-text-color);
+  margin-bottom: 1.5rem;
+  max-width: 46ch;
+  letter-spacing: -0.012em;
+}
+
+.hero__figure {
+  margin: 0;
+
+  // `figure.html` wraps the image in its own <figure>; flatten it.
+  figure { margin: 0; }
+  picture { display: block; }
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid var(--global-divider-color);
+    display: block;
+  }
+}
+
+.hero__location {
+  font-family: $font-mono;
+  font-size: 0.74rem;
+  color: var(--global-text-color-faint);
+  margin-top: 0.7rem;
+  text-align: center;
+}
+
+// Inline stat strip: papers / citations / h-index.
+.hero__stats {
+  font-family: $font-mono;
+  font-size: 0.78rem;
+  color: var(--global-text-color-faint);
+  padding-top: 0.3rem;
+
+  a {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.2rem 1.6rem;
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      color: var(--global-theme-color);
+      text-decoration: none;
+      b { color: var(--global-theme-color); }
+    }
+  }
+
+  .stat b {
+    color: var(--global-text-color);
+    font-weight: 600;
+    margin-right: 0.3rem;
+    transition: color 0.15s ease;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    padding-top: 2.25rem;
+  }
+  .hero__figure {
+    width: 150px;
+    order: -1;
+  }
+  .hero__location { text-align: left; }
+}
+
+// -----------------------------------------------------------------------------
+// About page: focus list
+// -----------------------------------------------------------------------------
+
+.focus-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  display: grid;
+  gap: 0.55rem;
+
+  li {
+    font-family: $font-mono;
+    font-size: 0.86rem;
+    color: var(--global-text-color-light);
+    padding-left: 1.35rem;
+    position: relative;
+
+    &::before {
+      content: "\25B8"; // small right-pointing triangle
+      position: absolute;
+      left: 0;
+      color: var(--global-theme-color);
+    }
+
+    b, strong {
+      color: var(--global-text-color);
+      font-weight: 600;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Project / work cards (about page highlights + /projects grid)
+// -----------------------------------------------------------------------------
+
+.work-grid {
+  display: grid;
+  // auto-fit, not auto-fill: a category with one or two cards should fill the
+  // row instead of leaving phantom tracks of empty space to the right.
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.work-card {
+  display: block;
+  background: var(--global-surface-color);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 9px;
+  padding: 1.05rem 1.15rem;
+  transition: border-color 0.16s ease, background-color 0.16s ease,
+              transform 0.16s ease;
+
+  &:hover {
+    border-color: var(--global-divider-strong);
+    background: var(--global-surface-hover);
+    transform: translateY(-2px);
+    text-decoration: none;
+  }
+}
+
+.work-card__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.6rem;
+  margin-bottom: 0.45rem;
+}
+
+.work-card__name {
+  font-family: $font-mono;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--global-theme-color);
+  letter-spacing: -0.01em;
+}
+
+.work-card__stars {
+  font-family: $font-mono;
+  font-size: 0.72rem;
+  color: var(--global-amber-color);
+  white-space: nowrap;
+}
+
+.work-card__desc {
+  font-size: 0.87rem;
+  line-height: 1.5;
+  color: var(--global-text-color-light);
+  margin: 0 0 0.6rem;
+}
+
+.work-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.tag {
+  font-family: $font-mono;
+  font-size: 0.68rem;
+  letter-spacing: 0.02em;
+  color: var(--global-text-color-faint);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 4px;
+  padding: 0.08rem 0.4rem;
+  background: var(--global-bg-color);
+}
+
+// -----------------------------------------------------------------------------
+// News -- rendered as a terminal log
+// -----------------------------------------------------------------------------
+
+.news {
+  .table-responsive { overflow: visible; }
+
+  table {
+    margin-bottom: 0;
+    width: 100%;
+  }
+
+  tr {
+    border-bottom: 1px solid var(--global-divider-color);
+    &:last-child { border-bottom: 0; }
+  }
+
+  th,
+  td {
+    border: 0 !important;
+    padding: 0.6rem 0 0.6rem 0 !important;
+    vertical-align: top;
+  }
+
+  th {
+    font-family: $font-mono;
+    font-size: 0.74rem;
+    font-weight: 500;
+    color: var(--global-amber-color);
+    white-space: nowrap;
+    width: 7.5rem;
+    padding-top: 0.78rem !important;
+  }
+
+  td {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: var(--global-text-color-light);
+  }
+
+  td strong,
+  td b {
+    color: var(--global-text-color);
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 575px) {
+  .news {
+    th, td { display: block; width: auto; }
+    th { padding-bottom: 0.1rem !important; }
+    td { padding-top: 0 !important; }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Publications
+// -----------------------------------------------------------------------------
+
+.publications {
+  margin-top: 1rem;
+
+  h2.year {
+    font-family: $font-mono;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--global-text-color-faint);
+    border-top: 0;
+    border-bottom: 1px solid var(--global-divider-color);
+    text-align: left;
+    padding: 0 0 0.5rem;
+    margin: 2.5rem 0 0;
+
+    span { font-size: inherit; }
+  }
+
+  ol.bibliography {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin: 0;
+      padding: 1.15rem 0;
+      border-bottom: 1px solid var(--global-divider-color);
+
+      // The stock bib layout is a 2/8 Bootstrap split; make the badge column
+      // narrow and let the entry breathe.
+      > .row { margin: 0; }
+
+      .col-sm-2 {
+        padding-left: 0;
+        padding-right: 0.9rem;
+      }
+      .col-sm-8 {
+        padding-left: 0;
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+
+      .abbr {
+        height: auto;
+        margin-bottom: 0.4rem;
+
+        abbr.badge {
+          display: inline-block;
+          font-family: $font-mono;
+          font-size: 0.68rem;
+          font-weight: 600;
+          letter-spacing: 0.04em;
+          padding: 0.2rem 0.5rem;
+          border-radius: 4px;
+          background-color: var(--global-surface-color);
+          text-decoration: none;
+
+          a {
+            color: #fff;
+            text-decoration: none;
+            &:hover { text-decoration: none; }
+          }
+        }
+      }
+
+      .title {
+        font-family: $font-mono;
+        font-size: 0.98rem;
+        font-weight: 600;
+        line-height: 1.4;
+        letter-spacing: -0.015em;
+        color: var(--global-text-color);
+        margin-bottom: 0.3rem;
+      }
+
+      .author {
+        font-size: 0.86rem;
+        line-height: 1.5;
+        color: var(--global-text-color-light);
+
+        > em {
+          color: var(--global-text-color);
+          font-style: normal;
+          font-weight: 600;
+          border-bottom: 0;
+        }
+
+        a {
+          color: var(--global-text-color-light);
+          border-bottom: 1px dotted var(--global-divider-strong);
+          &:hover {
+            color: var(--global-theme-color);
+            border-bottom-color: var(--global-theme-color);
+            text-decoration: none;
+          }
+        }
+      }
+
+      .periodical {
+        font-family: $font-mono;
+        font-size: 0.76rem;
+        color: var(--global-text-color-faint);
+        margin-top: 0.2rem;
+
+        em { font-style: normal; }
+      }
+
+      .links {
+        margin-top: 0.6rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem;
+
+        a.btn {
+          font-family: $font-mono;
+          font-size: 0.7rem;
+          font-weight: 500;
+          letter-spacing: 0.02em;
+          text-transform: lowercase;
+          color: var(--global-text-color-light);
+          background: var(--global-bg-color);
+          border: 1px solid var(--global-divider-color);
+          border-radius: 4px;
+          padding: 0.15rem 0.55rem;
+          margin: 0;
+          box-shadow: none;
+          transition: color 0.15s ease, border-color 0.15s ease,
+                      background-color 0.15s ease;
+
+          &:hover {
+            color: var(--global-theme-color);
+            border-color: var(--global-theme-color);
+            background: var(--global-accent-soft);
+          }
+        }
+      }
+
+      .hidden {
+        font-size: 0.83rem;
+        line-height: 1.6;
+        color: var(--global-text-color-light);
+      }
+
+      div.abstract.hidden { border: 0; }
+      div.abstract.hidden.open {
+        border: 1px solid var(--global-divider-color);
+        border-radius: 7px;
+        background: var(--global-surface-color);
+        margin-top: 0.65rem;
+      }
+
+      // The badge column stacks above the entry on every width; keeping the
+      // Bootstrap 2/8 split would leave a dead gutter at desktop sizes.
+      .preview {
+        width: 100%;
+        min-width: 80px;
+        max-width: 170px;
+        border-radius: 7px;
+        border: 1px solid var(--global-divider-color);
+      }
+    }
+  }
+}
+
+// Third-party citation badges sit on a dark canvas -- keep them legible.
+.publications .badges span { color: var(--global-text-color); }
+
+// -----------------------------------------------------------------------------
+// Services / timeline rows
+// -----------------------------------------------------------------------------
+
+.svc-list {
+  display: grid;
+  gap: 0;
+  margin-top: 1rem;
+}
+
+.svc-row {
+  display: grid;
+  grid-template-columns: 8rem minmax(0, 1fr);
+  gap: 1rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--global-divider-color);
+
+  &:last-child { border-bottom: 0; }
+}
+
+.svc-row__date {
+  font-family: $font-mono;
+  font-size: 0.74rem;
+  color: var(--global-amber-color);
+  padding-top: 0.15rem;
+}
+
+.svc-row__title {
+  font-family: $font-mono;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--global-text-color);
+  margin-bottom: 0.15rem;
+}
+
+.svc-row__desc {
+  font-size: 0.85rem;
+  color: var(--global-text-color-light);
+  margin: 0;
+}
+
+@media (max-width: 575px) {
+  .svc-row {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Page header (non-about pages)
+// -----------------------------------------------------------------------------
+
+.post-header,
+.header-bar {
+  border-bottom: 1px solid var(--global-divider-color);
+  text-align: left;
+  padding: 2.5rem 0 1.25rem;
+  margin-bottom: 1.5rem;
+
+  h1 {
+    font-family: $font-mono;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--global-text-color);
+    margin-bottom: 0.35rem;
+  }
+}
+
+.post-description,
+.header-bar .desc {
+  font-size: 0.9rem;
+  color: var(--global-text-color-light);
+  margin-bottom: 0;
+}
+
+// code / website / paper buttons on a project page header
+.page-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.9rem;
+}
+
+.page-link-btn {
+  font-family: $font-mono;
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  color: var(--global-text-color-light);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 5px;
+  padding: 0.2rem 0.65rem;
+  transition: color 0.15s ease, border-color 0.15s ease,
+              background-color 0.15s ease;
+
+  &:hover {
+    color: var(--global-theme-color);
+    border-color: var(--global-theme-color);
+    background: var(--global-accent-soft);
+    text-decoration: none;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Social row
+// -----------------------------------------------------------------------------
+
+.social {
+  text-align: left;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--global-divider-color);
+
+  .contact-icons {
+    font-size: 1.35rem;
+    display: flex;
+    gap: 1.05rem;
+
+    a i::before {
+      color: var(--global-text-color-light);
+      transition: color 0.15s ease;
+    }
+    a:hover i::before { color: var(--global-theme-color); }
+  }
+
+  .contact-note {
+    font-family: $font-mono;
+    font-size: 0.76rem;
+    color: var(--global-text-color-faint);
+    margin-top: 0.75rem;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Footer
+// -----------------------------------------------------------------------------
+
+footer.fixed-bottom,
+footer.sticky-bottom {
+  background-color: var(--global-footer-bg-color);
+  border-top: 1px solid var(--global-divider-color);
+  font-family: $font-mono;
+  font-size: 0.72rem;
+  text-align: center;
+  color: var(--global-footer-text-color);
+
+  .container { color: var(--global-footer-text-color); }
+
+  a {
+    color: var(--global-footer-link-color);
+    &:hover { color: var(--global-hover-color); }
+  }
+}
+
+footer.sticky-bottom {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+// -----------------------------------------------------------------------------
+// CV
+// -----------------------------------------------------------------------------
+
+.cv {
+  .card {
+    background-color: var(--global-surface-color);
+    border: 1px solid var(--global-divider-color);
+    border-radius: 9px;
+
+    .card-header,
+    .list-group-item {
+      background-color: transparent;
+      border-color: var(--global-divider-color);
+      color: var(--global-text-color);
+    }
+
+    .card-header {
+      font-family: $font-mono;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .list-group-item .badge {
+      font-family: $font-mono;
+      color: var(--global-bg-color) !important;
+      background-color: var(--global-theme-color) !important;
+    }
+  }
+
+  .font-weight-medium,
+  h6 { font-family: $font-mono; }
+}
+
+// -----------------------------------------------------------------------------
+// Blog list + pagination
+// -----------------------------------------------------------------------------
+
+.post-list li {
+  border-bottom: 1px solid var(--global-divider-color);
+  padding: 1.5rem 0;
+
+  h3 {
+    font-family: $font-mono;
+    font-size: 1.05rem;
+  }
+
+  .post-meta,
+  .post-tags {
+    font-family: $font-mono;
+    font-size: 0.74rem;
+    color: var(--global-text-color-faint);
+  }
+}
+
+.pagination .page-item {
+  .page-link {
+    font-family: $font-mono;
+    font-size: 0.8rem;
+    color: var(--global-text-color-light);
+    background-color: var(--global-surface-color);
+    border-color: var(--global-divider-color);
+    &:hover {
+      color: var(--global-theme-color);
+      background-color: var(--global-surface-hover);
+    }
+  }
+  &.active .page-link {
+    color: var(--global-bg-color);
+    background-color: var(--global-theme-color);
+    border-color: var(--global-theme-color);
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Repositories page
+// -----------------------------------------------------------------------------
+
+.repo {
+  img { border-radius: 7px; }
+}
+
+// -----------------------------------------------------------------------------
+// Scrollbar
+// -----------------------------------------------------------------------------
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--global-divider-strong) transparent;
+}
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--global-divider-strong);
+  border-radius: 6px;
+  border: 3px solid var(--global-bg-color);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--global-text-color-faint); }

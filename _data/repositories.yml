@@ -1,12 +1,15 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - fishmingyu
 
 github_repos:
-  - alshedivat/al-folio
-  - twbs/bootstrap
-  - jekyll/jekyll
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - jpswalsh/academicons
-  - mathjax/MathJax
+  # Lead author / maintainer
+  - sysevol-ai/CodeNib
+  - fishmingyu/OrcaLoca
+  - fishmingyu/GeoT
+  - fishmingyu/HyperGef
+  # Contributor
+  - dgSPARSE/dgSPARSE-Library
+  - dgSPARSE/dgNN
+  - stable-lab/MAGE
+  - THUDM/CogDL
+  - mit-han-lab/torchsparse

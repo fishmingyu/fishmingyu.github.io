@@ -3,3 +3,5 @@
 *.sass-cache
 *Gemfile.lock
 *.jekyll-cache
+# local preview only (docker gem cache -- safe to delete)
+.docker-bundle

@@ -14,7 +14,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>
     {%- if site.title == "blank" -%}
+        {%- comment -%} split/join collapses the extra space when middle_name is blank {%- endcomment -%}
         {%- capture title -%}{{ site.first_name }} {{ site.middle_name }} {{ site.last_name }}{%- endcapture -%}
+        {%- assign title = title | split: " " | join: " " -%}
     {%- else -%}
         {%- capture title -%}{{ site.title }}{%- endcapture -%}
     {%- endif -%}

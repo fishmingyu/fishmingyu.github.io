@@ -2,25 +2,87 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='https://cse.ucsd.edu/'>UCSD CSE</a>. Ph.D.
+
+# Hero
+role: Ph.D. Candidate
+org: UC San Diego CSE
+org_url: https://cse.ucsd.edu/
+advisor: Jishen Zhao
+advisor_url: https://cseweb.ucsd.edu/~jzhao/
+tagline: >
+  I build infrastructure for LLM agents — systems where agents are
+  first-class computational entities rather than an application layer
+  bolted onto a chat API.
 
 profile:
   align: right
   image: image.png
-  image_circular: false # crops the image to make it circular
+  image_circular: false
   address: >
-    <p>San Diego, California</p>
+    San Diego, California
 
-news: true # includes a list of news items
-selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
+news: true
+selected_papers: true
+social: true
 ---
 
-I am a third-year Ph.D. advised by Prof. [Jishen Zhao](https://cseweb.ucsd.edu/~jzhao/) in Computer Science and Engineering Department of UC San Diego, starting in 2022. I am now aiming to build efficient systems for machine learning. Before coming to UCSD, I received my B.E. degree from the Department of Electronic Engineering at Tsinghua University.
-I have a broad interest in combining machine learning and computer systems, with a special focus on the interaction between ML and System. I have previously focused on more acceleration for sparse computing and devoted myself to some open-source projects like [dgSPARSE](https://dgsparse.github.io/) and [CogDL](https://cogdl.ai/). Now I am working on agent framework that could help design better system, especially moving to MLsys self-evolution. Some topics that I have been working on are listed below:
+I am a fifth-year Ph.D. candidate at UC San Diego, advised by
+[Prof. Jishen Zhao](https://cseweb.ucsd.edu/~jzhao/), and since June 2026 a
+research intern at **NVIDIA**.
+{% comment %}
+  TODO(zhongming): swap "research intern" for your actual title if it differs.
+  The June 15, 2026 start date is confirmed. Liquid comment, not HTML -- this
+  must not reach the published source.
+{% endcomment %}
+Before UCSD I received my B.E. from the Department of Electronic Engineering at
+Tsinghua University.
 
-- LLM Agent System for MLSys
-- Evolving ML and System
-- Autonomous Software Engineering
+My work sits between machine learning and computer systems, and the through-line
+is that I keep treating model-shaped problems as systems problems. What an agent
+needs is rarely a bigger prompt — it is a memory hierarchy, an index that
+survives edits, and a serving layer with measurable lifecycle costs. That
+premise drives most of what I build now:
+[repository context serving](https://codenib.ai),
+[memory protocols for multi-agent systems](https://arxiv.org/abs/2603.10062),
+and [benchmarks that measure software as it evolves](https://arxiv.org/abs/2603.13428)
+rather than one patch at a time. A parallel thread puts agents to work on
+hardware, [generating](https://arxiv.org/abs/2412.07822) and
+[verifying](https://arxiv.org/abs/2602.16953) RTL.
 
-Feel free to contact me if you share any common interests.
+The same lens started in sparse computation — [dgSPARSE](https://dgsparse.github.io/),
+[CogDL](https://cogdl.ai/), GPU sparse linear algebra — and still shows up there,
+most recently in [sparse attention](https://arxiv.org/abs/2602.05191) for
+long-context inference.
+
+<ul class="focus-list">
+  <li><b>Agent infrastructure</b> — repository context serving, incremental indexes, retrieval that respects code structure</li>
+  <li><b>Agent memory</b> — multi-agent memory hierarchies, consistency, long-horizon retention</li>
+  <li><b>Evaluation</b> — benchmarks for continuous software evolution, not one-shot patches</li>
+  <li><b>Agents for hardware</b> — RTL generation and verification, learning from execution feedback</li>
+  <li><b>ML systems</b> — sparse kernels, sparse attention, GPU compilation</li>
+</ul>
+
+I also maintain [SysEvol](https://github.com/sysevol-ai), an open-source effort
+around AI-driven system evolution.
+
+## current work
+
+<div class="work-grid">
+  <a class="work-card" href="https://codenib.ai">
+    <div class="work-card__head">
+      <span class="work-card__name">CodeNib</span>
+      <span class="work-card__stars">★ 66</span>
+    </div>
+    <p class="work-card__desc">A multi-view data system that serves repository context to coding agents — lexical, dense, and structural views that update incrementally instead of rebuilding.</p>
+    <div class="work-card__tags">
+      <span class="tag">arXiv 2607.25431</span>
+      <span class="tag">python</span>
+      <span class="tag">apache-2.0</span>
+    </div>
+  </a>
+</div>
+
+Everything else — agent evaluation, RTL agents, the sparse computation work —
+is on the [projects]({{ '/projects/' | relative_url }}) page.
+
+Feel free to reach out if any of this overlaps with what you are working on.

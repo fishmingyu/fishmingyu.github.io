@@ -3,90 +3,172 @@
 
 @string{aps = {American Physical Society,}}
 
+% -----------------------------------------------------------------------------
+% 2026
+% -----------------------------------------------------------------------------
+
+@article{yu2026codenib,
+  title       = {CodeNib: A Multi-View Data System for Serving Repository Context to Coding Agents},
+  author      = {Yu, Zhongming and Yu, Hengjia and Yuan, Boqin and Zhao, Shuting and Chen, Yizhao and Dokania, Aryan and Jagtap, Mihir and Chang, Jiayu and Ma, Yitong and Jayswal, Yash and Ni, Wentao and Zhang, Hejia and Chen, Zhaoling and Deng, Gangda and Zhao, Jishen},
+  journal     = {arXiv preprint arXiv:2607.25431},
+  year        = {2026},
+  abbr        = {arXiv},
+  bibtex_show = {true},
+  selected    = {true},
+  arxiv       = {2607.25431},
+  code        = {https://github.com/sysevol-ai/CodeNib},
+  website     = {https://codenib.ai},
+  abstract    = {Coding agents repeatedly search, navigate, and retain context from evolving repositories, but disconnected indexes, language servers, and task-local histories force repeated discovery and obscure lifecycle costs. CodeNib builds reusable lexical, dense, and structural views per repository commit, maps outputs to repository-relative source ranges, maintains selected views across edits, and serves ranked search, symbol navigation, and bounded context through one runtime. Across 100 snapshots, graph and vector updates are 8.7x and 25.4x faster when outputs match independent rebuilds, static navigation requests that match live-server locations see a 4.7x median latency improvement, and context selection policies reduce trajectory tokens by 50-87% relative to grep/read baselines.}
+}
+
+@inproceedings{deng2026swemilestone,
+  title       = {SWE-Milestone: Evaluating AI Agents on Continuous Software Evolution},
+  author      = {Deng, Gangda and Chen, Zhaoling and Yu, Zhongming and Fan, Haoyang and Liu, Yuhong and Yang, Yuxin and Parikh, Dhruv and Kannan, Rajgopal and Cong, Le and Wang, Mengdi and Zhang, Qian and Prasanna, Viktor and Tang, Xiangru and Wang, Xingyao},
+  booktitle   = {Proceedings of the 43rd International Conference on Machine Learning},
+  year        = {2026},
+  abbr        = {ICML},
+  bibtex_show = {true},
+  selected    = {true},
+  arxiv       = {2603.13428},
+  html        = {https://arxiv.org/abs/2603.13428},
+  abstract    = {Real software is maintained, not written once. We introduce SWE-Milestone, a benchmark that evaluates agents on streams of milestone-level tasks reconstructed from commit logs by DeepCommit, requiring sustained system integrity rather than isolated patches. Evaluating 12 frontier models across 4 agent frameworks, overall performance drops from >80% on isolated tasks to 38.03% in continuous settings, exposing error propagation and technical-debt accumulation that current benchmarks do not measure.}
+}
+
+@inproceedings{zhang2026llm4cov,
+  title       = {LLM4Cov: Execution-Aware Agentic Learning for High-Coverage Testbench Generation},
+  author      = {Zhang, Hejia and Yu, Zhongming and Ho, Chia-Tung and Ren, Haoxing and Khailany, Brucek and Zhao, Jishen},
+  booktitle   = {Proceedings of the 43rd International Conference on Machine Learning},
+  year        = {2026},
+  abbr        = {ICML},
+  bibtex_show = {true},
+  arxiv       = {2602.16953},
+  code        = {https://github.com/HejiaZ2023/llm4cov_oss},
+  website     = {https://hejiaz2023.github.io/llm4cov_oss/},
+  html        = {https://arxiv.org/abs/2602.16953},
+  abstract    = {Execution-aware LLM agents offer a promising paradigm for learning from tool feedback, but in hardware verification such feedback is expensive and slow, relying on industrial simulators and non-differentiable execution signals. LLM4Cov is an offline agent-learning framework combining execution-validated data curation, policy-aware agentic data synthesis, and worst-state-prioritized sampling. A compact 4B model reaches a 69.2% coverage pass rate under agentic evaluation, outperforming its teacher by 5.3% and competing with models an order of magnitude larger.}
+}
+
+@article{zhao2026amabench,
+  title       = {AMA-Bench: Evaluating Long-Horizon Memory for Agentic Applications},
+  author      = {Zhao, Yujie and Yuan, Boqin and Huang, Junbo and Yuan, Haocheng and Yu, Zhongming and Xu, Haozhou and Hu, Lanxiang and Shankarampeta, Abhilash and Huang, Zimeng and Ni, Wentao and Tian, Yuandong and Zhao, Jishen},
+  journal     = {arXiv preprint arXiv:2602.22769},
+  year        = {2026},
+  abbr        = {arXiv},
+  bibtex_show = {true},
+  arxiv       = {2602.22769},
+  website     = {https://ama-bench.github.io},
+  abstract    = {Existing memory benchmarks center on dialogue, leaving open how well LLM agents retain and use information across realistic agent-environment interaction involving states, actions, observations, and tool outputs. AMA-Bench targets this setting and reveals that current memory systems fail to preserve causal relationships and objective information, over-relying on similarity-based retrieval. Our AMA-Agent uses causality-graph construction and tool-augmented retrieval to reach 57.22% accuracy, outperforming the strongest baseline by 11.16%.}
+}
+
+@article{yu2026multiagentmemory,
+  title       = {Multi-Agent Memory from a Computer Architecture Perspective: Visions and Challenges Ahead},
+  author      = {Yu, Zhongming and Yu, Naicheng and Zhang, Hejia and Ni, Wentao and Yin, Mingrui and Yang, Jiaying and Zhao, Yujie and Zhao, Jishen},
+  journal     = {arXiv preprint arXiv:2603.10062},
+  year        = {2026},
+  abbr        = {arXiv},
+  note        = {Position paper. Featured on ACM SIGARCH},
+  bibtex_show = {true},
+  selected    = {true},
+  arxiv       = {2603.10062},
+  blog        = {https://www.sigarch.org/multi-agent-memory-from-a-computer-architecture-perspective-visions-and-challenges-ahead/},
+  abstract    = {As LLM agents evolve into collaborative multi-agent systems, their memory requirements grow rapidly in complexity. This position paper frames multi-agent memory as a computer architecture problem: we distinguish shared from distributed memory paradigms, propose a three-layer memory hierarchy (I/O, cache, and memory), and identify two protocol gaps -- cache sharing across agents and structured memory access control. We argue that multi-agent memory consistency is the most pressing open challenge ahead.}
+}
+
+@article{ni2026doublep,
+  title       = {Double-P: Hierarchical Top-P Sparse Attention for Long-Context LLMs},
+  author      = {Ni, Wentao and Zhang, Kangqi and Yu, Zhongming and Nelson, Oren and Lee, Mingu and Cai, Hong and Porikli, Fatih and Kim, Jongryool and Liu, Zhijian and Zhao, Jishen},
+  journal     = {arXiv preprint arXiv:2602.05191},
+  year        = {2026},
+  abbr        = {arXiv},
+  bibtex_show = {true},
+  arxiv       = {2602.05191},
+  abstract    = {Double-P is a hierarchical sparse attention framework that first performs coarse-grained top-p estimation at the cluster level using size-weighted centroids, then adaptively refines computation through a second top-p stage. It consistently achieves near-zero accuracy drop while reducing attention computation overhead by up to 1.8x and delivering up to 1.3x end-to-end decoding speedup over state-of-the-art fixed-budget sparse attention methods.}
+}
+
+% -----------------------------------------------------------------------------
+% 2025
+% -----------------------------------------------------------------------------
+
+@inproceedings{yu2025orcaloca,
+  title       = {OrcaLoca: An LLM Agent Framework for Software Issue Localization},
+  author      = {Yu, Zhongming and Zhang, Hejia and Zhao, Yujie and Huang, Hanxian and Yao, Matrix and Ding, Ke and Zhao, Jishen},
+  booktitle   = {Proceedings of the 42nd International Conference on Machine Learning},
+  year        = {2025},
+  abbr        = {ICML},
+  code        = {https://github.com/fishmingyu/OrcaLoca},
+  html        = {https://proceedings.mlr.press/v267/yu25x.html},
+  arxiv       = {2502.00350},
+  bibtex_show = {true},
+  selected    = {true},
+  abstract    = {Recent developments in LLM agent systems have shown impressive capabilities for software issue resolution, yet accurately localizing the code to be modified remains a bottleneck. OrcaLoca improves accuracy through priority-based scheduling for LLM-guided action, action decomposition with relevance scoring, and distance-aware context pruning, setting a new state of the art in function-match rate on SWE-bench Lite.}
+}
+
+@inproceedings{zhao2025mage,
+  title       = {MAGE: A Multi-Agent Engine for Automated RTL Code Generation},
+  author      = {Zhao, Yujie and Zhang, Hejia and Huang, Hanxian and Yu, Zhongming and Zhao, Jishen},
+  booktitle   = {Proceedings of the 62nd ACM/IEEE Design Automation Conference},
+  year        = {2025},
+  abbr        = {DAC},
+  code        = {https://github.com/stable-lab/MAGE},
+  html        = {https://arxiv.org/abs/2412.07822},
+  arxiv       = {2412.07822},
+  bibtex_show = {true}
+}
+
+@article{zhao2025prov,
+  title       = {PRO-V-R1: Reasoning Enhanced Programming Agent for RTL Verification},
+  author      = {Zhao, Yujie and Wu, Zhijing and Yuan, Boqin and Yu, Zhongming and Zhang, Hejia and Ni, Wentao and Ho, Chia-Tung and Ren, Haoxing and Zhao, Jishen},
+  journal     = {arXiv preprint arXiv:2506.12200},
+  year        = {2025},
+  abbr        = {arXiv},
+  bibtex_show = {true},
+  arxiv       = {2506.12200},
+  code        = {https://github.com/stable-lab/Pro-V},
+  abstract    = {PRO-V-R1 is the first open-source trainable agentic framework for autonomous RTL verification. It achieves a 57.7% functional correctness rate and 34.0% robust fault detection, substantially improving on baselines and matching proprietary LLM capability on several benchmarks.}
+}
+
+% -----------------------------------------------------------------------------
+% 2024
+% -----------------------------------------------------------------------------
+
 @article{yu2024geot,
-  title   = {GeoT: Tensor Centric Library for Graph Neural Network via Efficient Segment Reduction on GPU},
-  author  = {Yu, Zhongming and Zhang, Genghan and Huang, Hanxian and Chen, Xin and Zhao, Jishen},
-  journal = {arXiv preprint arXiv:2404.03019},
-  year    = {2024},
-  abbr    = arXiv,
-  code    = {https://github.com/fishmingyu/GeoT}
-}
-
-@article{zhang2022understanding,
-  title       = {Understanding gnn computational graph: A coordinated computation, io, and memory perspective},
-  author      = {Zhang*, Hengrui and Yu*, Zhongming and Dai, Guohao and Huang, Guyue and Ding, Yufei and Xie, Yuan and Wang, Yu},
-  journal     = {Proceedings of Machine Learning and Systems},
-  note        = {* stands for equal contribution},
-  code        = {https://github.com/dgSPARSE/dgNN},
-  volume      = {4},
-  pages       = {467--484},
-  year        = {2022},
+  title       = {GeoT: Tensor Centric Library for Graph Neural Network via Efficient Segment Reduction on GPU},
+  author      = {Yu, Zhongming and Zhang, Genghan and Huang, Hanxian and Chen, Xin and Zhao, Jishen},
+  journal     = {arXiv preprint arXiv:2404.03019},
+  year        = {2024},
+  abbr        = {arXiv},
   bibtex_show = {true},
-  abbr        = MLSys,
-  html        = {https://proceedings.mlsys.org/paper/2022/file/9a1158154dfa42caddbd0694a4e9bdc8-Paper.pdf}
+  arxiv       = {2404.03019},
+  code        = {https://github.com/fishmingyu/GeoT}
 }
 
-@inproceedings{yu2021exploiting,
-  title        = {Exploiting Online Locality and Reduction Parallelism for Sampled Dense Matrix Multiplication on GPUs},
-  author       = {Yu, Zhongming and Dai, Guohao and Huang, Guyue and Wang, Yu and Yang, Huazhong},
-  booktitle    = {2021 IEEE 39th International Conference on Computer Design (ICCD)},
-  pages        = {567--574},
-  year         = {2021},
-  bibtex_show  = {true},
-  abbr         = ICCD,
-  code         = {https://github.com/dgSPARSE/dgSPARSE-Lib},
-  html         = {https://ieeexplore.ieee.org/abstract/document/9643711},
-  organization = {IEEE}
-}
+% -----------------------------------------------------------------------------
+% 2023
+% -----------------------------------------------------------------------------
 
-@article{hu2022benchmarking,
-  title       = {Benchmarking GNN-Based Recommender Systems on Intel Optane Persistent Memory},
-  author      = {Hu, Yuwei and Li, Jiajie and Yu, Zhongming and Zhang, Zhiru},
-  journal     = {arXiv preprint arXiv:2207.11918},
-  year        = {2022},
-  abbr        = arXiv,
-  bibtex_show = {true},
-  html        = {https://arxiv.org/abs/2207.11918}
-}
-
-
-@inproceedings{cen2023cogdl,
-  title       = {Cogdl: A comprehensive library for graph deep learning},
-  author      = {Cen, Yukuo and Hou, Zhenyu and Wang, Yan and Chen, Qibin and Luo, Yizhen and Yu, Zhongming and Zhang, Hengrui and Yao, Xingcheng and Zeng, Aohan and Guo, Shiguang and others},
-  booktitle   = {Proceedings of the ACM Web Conference 2023},
-  pages       = {747--758},
-  abbr        = WWW,
-  bibtex_show = {true},
+@inproceedings{tang2023torchsparsepp,
+  title       = {TorchSparse++: Efficient Training and Inference Framework for Sparse Convolution on GPUs},
+  author      = {Tang, Haotian and Yang, Shang and Liu, Zhijian and Hong, Ke and Yu, Zhongming and Li, Xiuyu and Dai, Guohao and Wang, Yu and Han, Song},
+  booktitle   = {Proceedings of the 56th Annual IEEE/ACM International Symposium on Microarchitecture},
   year        = {2023},
-  html        = {https://dl.acm.org/doi/abs/10.1145/3543507.3583472},
-  code        = {https://github.com/THUDM/CogDL}
+  abbr        = {MICRO},
+  bibtex_show = {true},
+  selected    = {true},
+  arxiv       = {2311.12862},
+  code        = {https://github.com/mit-han-lab/torchsparse},
+  html        = {https://dl.acm.org/doi/10.1145/3613424.3614303}
 }
-
 
 @article{yu2023hypergef,
   title       = {HyperGef: A Framework Enabling Efficient Fusion for Hypergraph Neural Network on GPUs},
   author      = {Yu, Zhongming and Dai, Guohao and Yang, Shang and Zhang, Genghan and Zhang, Hengrui and Zhu, Feiwen and Yang, June and Zhao, Jishen and Wang, Yu},
   journal     = {Proceedings of Machine Learning and Systems},
   volume      = {5},
-  abbr        = MLSys,
+  abbr        = {MLSys},
   year        = {2023},
   bibtex_show = {true},
   html        = {https://proceedings.mlsys.org/paper_files/paper/2023/hash/c0987e6b6da2428e8cd43efa74790ccb-Abstract-mlsys2023.html},
   code        = {https://github.com/fishmingyu/HyperGef}
-}
-
-
-@inproceedings{tang2023torchsparse++,
-  title       = {TorchSparse++: Efficient Point Cloud Engine},
-  author      = {Tang, Haotian and Yang, Shang and Liu, Zhijian and Hong, Ke and Yu, Zhongming and Li, Xiuyu and Dai, Guohao and Wang, Yu and Han, Song},
-  booktitle   = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
-  pages       = {202--209},
-  abbr        = CVPR,
-  note        = {Poster},
-  bibtex_show = {true},
-  year        = {2023},
-  code        = {https://github.com/mit-han-lab/torchsparse},
-  html        = {https://openaccess.thecvf.com/content/CVPR2023W/WAD/papers/Tang_TorchSparse_Efficient_Point_Cloud_Engine_CVPRW_2023_paper.pdf}
 }
 
 @article{hong2023exploiting,
@@ -95,33 +177,117 @@
   journal     = {Proceedings of Machine Learning and Systems},
   volume      = {5},
   note        = {* stands for equal contribution},
-  abbr        = MLSys,
+  abbr        = {MLSys},
   year        = {2023},
   bibtex_show = {true},
   html        = {https://proceedings.mlsys.org/paper_files/paper/2023/hash/bd3303e587689af8869a92233e1e0ac9-Abstract-mlsys2023.html},
   code        = {https://github.com/hkeee21/PCEngine}
 }
 
-@inproceedings{zhao2025mage,
-  title={MAGE: A Multi-Agent Engine for Automated RTL Code Generation},
-  author={Zhao, Yujie and Zhang, Hejia and Huang, Hanxian and Yu, Zhongming and Zhao, Jishen},
-  booktitle={Proceedings of the 62nd ACM/IEEE Design Automation Conference},
-  year={2025},
-  abbr=DAC,
-  code={https://github.com/stable-lab/MAGE},
-  html={https://arxiv.org/abs/2412.07822},
-  bibtex_show={true},
+@inproceedings{cen2023cogdl,
+  title       = {CogDL: A Comprehensive Library for Graph Deep Learning},
+  author      = {Cen, Yukuo and Hou, Zhenyu and Wang, Yan and Chen, Qibin and Luo, Yizhen and Yu, Zhongming and Zhang, Hengrui and Yao, Xingcheng and Zeng, Aohan and Guo, Shiguang and others},
+  booktitle   = {Proceedings of the ACM Web Conference 2023},
+  pages       = {747--758},
+  abbr        = {WWW},
+  bibtex_show = {true},
+  year        = {2023},
+  html        = {https://dl.acm.org/doi/abs/10.1145/3543507.3583472},
+  code        = {https://github.com/THUDM/CogDL}
 }
 
+@inproceedings{fu2023clap,
+  title        = {CLAP: Locality Aware and Parallel Triangle Counting with Content Addressable Memory},
+  author       = {Fu, Tianyu and Wei, Chiyue and Zhu, Zhenhua and Yang, Shang and Yu, Zhongming and Dai, Guohao and Yang, Huazhong and Wang, Yu},
+  booktitle    = {2023 Design, Automation \& Test in Europe Conference \& Exhibition (DATE)},
+  year         = {2023},
+  abbr         = {DATE},
+  bibtex_show  = {true},
+  code         = {https://github.com/thu-nics/CLAP-triangle-counting},
+  html         = {https://ieeexplore.ieee.org/document/10136997/},
+  organization = {IEEE}
+}
 
-@inproceedings{yu2025orcaloca,
-  title={OrcaLoca: An LLM Agent Framework for Software Issue Localization},
-  author={Yu, Zhongming and Zhang, Hejia and Zhao, Yujie and Huang, Hanxian and Yao, Matrix and Ding, Ke and Zhao, Jishen},
-  booktitle={Proceedings of the 42nd International Conference on Machine Learning},
-  year={2025},
-  abbr=ICML,
-  code={https://github.com/fishmingyu/OrcaLoca},
-  html={https://icml.cc/virtual/2025/poster/45561},
-  bibtex_show={true},
-  selected={true}
+@article{zhang2023sgap,
+  title       = {Sgap: Towards Efficient Sparse Tensor Algebra Compilation for GPU},
+  author      = {Zhang, Genghan and Zhao, Yuetong and Tao, Yanting and Yu, Zhongming and Dai, Guohao and Huang, Sitao and Wen, Yuan and Petoumenos, Pavlos and Wang, Yu},
+  journal     = {CCF Transactions on High Performance Computing},
+  volume      = {5},
+  pages       = {210--227},
+  year        = {2023},
+  abbr        = {THPC},
+  bibtex_show = {true},
+  arxiv       = {2209.02882},
+  html        = {https://link.springer.com/article/10.1007/s42514-023-00140-4}
+}
+
+% -----------------------------------------------------------------------------
+% 2022
+% -----------------------------------------------------------------------------
+
+@article{zhang2022understanding,
+  title       = {Understanding GNN Computational Graph: A Coordinated Computation, IO, and Memory Perspective},
+  author      = {Zhang*, Hengrui and Yu*, Zhongming and Dai, Guohao and Huang, Guyue and Ding, Yufei and Xie, Yuan and Wang, Yu},
+  journal     = {Proceedings of Machine Learning and Systems},
+  note        = {* stands for equal contribution},
+  code        = {https://github.com/dgSPARSE/dgNN},
+  volume      = {4},
+  pages       = {467--484},
+  year        = {2022},
+  bibtex_show = {true},
+  selected    = {true},
+  abbr        = {MLSys},
+  html        = {https://proceedings.mlsys.org/paper/2022/file/9a1158154dfa42caddbd0694a4e9bdc8-Paper.pdf}
+}
+
+@inproceedings{dai2022heuristic,
+  title        = {Heuristic Adaptability to Input Dynamics for SpMM on GPUs},
+  author       = {Dai, Guohao and Huang, Guyue and Yang, Shang and Yu, Zhongming and Zhang, Hengrui and Ding, Yufei and Xie, Yuan and Yang, Huazhong and Wang, Yu},
+  booktitle    = {Proceedings of the 59th ACM/IEEE Design Automation Conference},
+  year         = {2022},
+  abbr         = {DAC},
+  bibtex_show  = {true},
+  arxiv        = {2202.08556},
+  code         = {https://github.com/dgSPARSE/dgSPARSE-Library},
+  html         = {https://dl.acm.org/doi/10.1145/3489517.3530508},
+  organization = {ACM}
+}
+
+@article{cheng2022fastfold,
+  title       = {FastFold: Reducing AlphaFold Training Time from 11 Days to 67 Hours},
+  author      = {Cheng, Shenggan and Zhao, Xuanlei and Lu, Guangyang and Fang, Jiarui and Yu, Zhongming and Zheng, Tian and Wu, Ruidong and Zhang, Xiwen and Peng, Jian and You, Yang},
+  journal     = {arXiv preprint arXiv:2203.00854},
+  year        = {2022},
+  abbr        = {arXiv},
+  bibtex_show = {true},
+  arxiv       = {2203.00854},
+  code        = {https://github.com/hpcaitech/FastFold}
+}
+
+@article{hu2022benchmarking,
+  title       = {Benchmarking GNN-Based Recommender Systems on Intel Optane Persistent Memory},
+  author      = {Hu, Yuwei and Li, Jiajie and Yu, Zhongming and Zhang, Zhiru},
+  journal     = {arXiv preprint arXiv:2207.11918},
+  year        = {2022},
+  abbr        = {arXiv},
+  bibtex_show = {true},
+  arxiv       = {2207.11918},
+  html        = {https://arxiv.org/abs/2207.11918}
+}
+
+% -----------------------------------------------------------------------------
+% 2021
+% -----------------------------------------------------------------------------
+
+@inproceedings{yu2021exploiting,
+  title        = {Exploiting Online Locality and Reduction Parallelism for Sampled Dense Matrix Multiplication on GPUs},
+  author       = {Yu, Zhongming and Dai, Guohao and Huang, Guyue and Wang, Yu and Yang, Huazhong},
+  booktitle    = {2021 IEEE 39th International Conference on Computer Design (ICCD)},
+  pages        = {567--574},
+  year         = {2021},
+  bibtex_show  = {true},
+  abbr         = {ICCD},
+  code         = {https://github.com/dgSPARSE/dgSPARSE-Lib},
+  html         = {https://ieeexplore.ieee.org/abstract/document/9643711},
+  organization = {IEEE}
 }

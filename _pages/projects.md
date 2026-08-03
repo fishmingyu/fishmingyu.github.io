@@ -2,57 +2,33 @@
 layout: page
 title: projects
 permalink: /projects/
-description: A growing collection of your cool projects.
-nav: false
+description: Things I build and maintain.
+nav: true
 nav_order: 2
-display_categories: [work, fun]
-horizontal: false
+display_categories: [agent infrastructure, agents for hardware, ml systems]
 ---
 
 <!-- pages/projects.md -->
-<div class="projects">
-{%- if site.enable_project_categories and page.display_categories %}
-  <!-- Display categorized projects -->
-  {%- for category in page.display_categories %}
-  <h2 class="category">{{ category }}</h2>
-  {%- assign categorized_projects = site.projects | where: "category", category -%}
-  {%- assign sorted_projects = categorized_projects | sort: "importance" %}
-  <!-- Generate cards for each project -->
-  {% if page.horizontal -%}
-  <div class="container">
-    <div class="row row-cols-2">
-    {%- for project in sorted_projects -%}
-      {% include projects_horizontal.html %}
-    {%- endfor %}
+{%- for category in page.display_categories %}
+{%- assign categorized = site.projects | where: "category", category -%}
+{%- if categorized.size > 0 %}
+<h2>{{ category }}</h2>
+<div class="work-grid">
+  {%- assign sorted = categorized | sort: "importance" -%}
+  {%- for project in sorted %}
+  <a class="work-card" href="{{ project.url | relative_url }}">
+    <div class="work-card__head">
+      <span class="work-card__name">{{ project.title }}</span>
+      {%- if project.badge %}<span class="work-card__stars">{{ project.badge }}</span>{% endif %}
     </div>
-  </div>
-  {%- else -%}
-  <div class="grid">
-    {%- for project in sorted_projects -%}
-      {% include projects.html %}
-    {%- endfor %}
-  </div>
-  {%- endif -%}
-  {% endfor %}
-
-{%- else -%}
-<!-- Display projects without categories -->
-  {%- assign sorted_projects = site.projects | sort: "importance" -%}
-  <!-- Generate cards for each project -->
-  {% if page.horizontal -%}
-  <div class="container">
-    <div class="row row-cols-2">
-    {%- for project in sorted_projects -%}
-      {% include projects_horizontal.html %}
-    {%- endfor %}
+    <p class="work-card__desc">{{ project.description }}</p>
+    {%- if project.tags %}
+    <div class="work-card__tags">
+      {%- for tag in project.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
     </div>
-  </div>
-  {%- else -%}
-  <div class="grid">
-    {%- for project in sorted_projects -%}
-      {% include projects.html %}
-    {%- endfor %}
-  </div>
-  {%- endif -%}
-{%- endif -%}
+    {%- endif %}
+  </a>
+  {%- endfor %}
 </div>
+{%- endif %}
+{%- endfor %}

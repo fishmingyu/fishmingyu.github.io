@@ -8,13 +8,14 @@ middle_name:
 last_name: Yu
 email: zhy025@ucsd.edu
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+  Zhongming Yu — Ph.D. candidate at UC San Diego CSE building infrastructure for
+  LLM agents: repository context serving, agent memory hierarchies, and ML systems.
 footer_text: >
-  Modified from <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
-keywords: jekyll, jekyll-theme, academic-website, portfolio-website  # add your own keywords or leave empty
+  Built with <a href="https://github.com/alshedivat/al-folio">al-folio</a>.
+keywords: Zhongming Yu, LLM agents, agent infrastructure, coding agents, agent memory, ML systems, sparse computation, GPU, UC San Diego, CodeNib, OrcaLoca
 
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon: ⚛️  # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
+icon: ▸  # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
 url: https://fishmingyu.github.io # the base hostname & protocol for your site
 baseurl: / # the subpath of your site, e.g. /blog/
@@ -49,7 +50,7 @@ navbar_fixed: true
 footer_fixed: true
 
 # Dimensions
-max_width: 800px
+max_width: 940px
 
 # TODO: add layout settings (single page vs. multi-page)
 
@@ -57,9 +58,9 @@ max_width: 800px
 # Open Graph & Schema.org
 # -----------------------------------------------------------------------------
 # Display links to the page with a preview object on social media.
-serve_og_meta: false # Include Open Graph meta tags in the HTML head
-serve_schema_org: false # Include Schema.org in the HTML head
-og_image: # The site-wide (default for all links) Open Graph preview image
+serve_og_meta: true # Include Open Graph meta tags in the HTML head
+serve_schema_org: true # Include Schema.org in the HTML head
+og_image: https://fishmingyu.github.io/assets/img/image.png # The site-wide (default for all links) Open Graph preview image
 
 # -----------------------------------------------------------------------------
 # Social integration
@@ -72,6 +73,17 @@ mastodon_username: # your mastodon instance+username in the format instance.tld/
 linkedin_username: fishmingyuee # your LinkedIn user name
 telegram_username: # your Telegram user name
 scholar_userid: 68sFa3IAAAAJ # your Google Scholar ID
+
+# Stat strip shown under the tagline on the about page. These are static --
+# refresh them from the Google Scholar profile every few months, or delete the
+# block to hide the strip entirely.
+scholar_stats:
+  - value: 20
+    label: papers
+  - value: 600+
+    label: citations
+  - value: 10
+    label: h-index
 semanticscholar_id: # your Semantic Scholar ID
 whatsapp_number: # your WhatsApp number (full phone number in international format. Omit any zeroes, brackets, or dashes when adding the phone number in international format.)
 orcid_id: # your ORCID ID
@@ -95,7 +107,9 @@ facebook_id: # your facebook id
 youtube_id: # your youtube channel id (youtube.com/@<youtube_id>)
 discord_id: # your discord id (18-digit unique numerical identifier)
 
-contact_note: 
+contact_note: >
+  zhy025 [at] ucsd [dot] edu — happy to talk about agent infrastructure,
+  evaluation, or anything sparse.
 # -----------------------------------------------------------------------------
 # Analytics and search engine verification
 # -----------------------------------------------------------------------------
@@ -110,9 +124,9 @@ bing_site_verification:  # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: Ideas # blog_name will be displayed in your blog page
+blog_name: Notes # blog_name will be displayed in your blog page
 blog_nav_title:  # your blog must have a title for it to be displayed in the nav bar
-blog_description: a simple whitespace theme for academics
+blog_description: occasional notes on agents, systems, and the space between them
 permalink: /blog/:year/:title/
 
 # Pagination
@@ -140,11 +154,11 @@ disqus_shortname: al-folio # put your disqus shortname
 # https://help.disqus.com/en/articles/1717111-what-s-a-shortname
 
 # External sources.
-# If you have blog posts published on medium.com or other exteranl sources,
+# If you have blog posts published on medium.com or other external sources,
 # you can display them in your blog by adding a link to the RSS feed.
-external_sources:
-  - name: medium.com
-    rss_url: https://medium.com/@al-folio/feed
+# (Left empty on purpose -- the al-folio default pulled the theme author's
+# Medium feed into this blog.)
+external_sources: []
 
 # -----------------------------------------------------------------------------
 # Collections
@@ -160,7 +174,7 @@ collections:
     output: true
     permalink: /projects/:path/
 
-news_scrollable: true # adds a vertical scroll bar if there are more than 3 news items
+news_scrollable: false # the al-folio default clamps the list to 10vw, which clips it on every screen size
 news_limit: 5 # leave blank to include all the news in the `_news` folder
 
 # -----------------------------------------------------------------------------
@@ -238,7 +252,7 @@ jekyll-archives:
     tag: '/blog/tag/:name/'
     category: '/blog/category/:name/'
 
-display_tags: ['formatting', 'images', 'links', 'math', 'code'] # this tags will be dispalyed on the front page of your blog
+display_tags: [] # tags displayed on the blog front page; the al-folio defaults linked to archive pages that do not exist here
 
 # -----------------------------------------------------------------------------
 # Jekyll Scholar

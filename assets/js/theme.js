@@ -70,10 +70,12 @@ let transTheme = () => {
 
 let initTheme = (theme) => {
   if (theme == null || theme == 'null') {
+    // Dark is this site's default. Only start in light mode when the OS asks
+    // for it explicitly -- "no preference" should still land on dark.
     const userPref = window.matchMedia;
-    if (userPref && userPref('(prefers-color-scheme: dark)').matches) {
-        theme = 'dark';
-    }
+    theme = (userPref && userPref('(prefers-color-scheme: light)').matches)
+      ? 'light'
+      : 'dark';
   }
 
   setTheme(theme);

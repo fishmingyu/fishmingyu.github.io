@@ -11,5 +11,6 @@ $max-content-width: {{ site.max_width }};
   "themes",
   "layout",
   "base",
+  "terminal",  // component styles; must come after "base" to win the cascade
   "distill"
 ;

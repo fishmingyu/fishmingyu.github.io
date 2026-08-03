@@ -1,34 +1,26 @@
-"Adams":
-  - firstname: ["Edwin", "E.", "E. P.", "Edwin Plimpton"]
-    url: https://en.wikipedia.org/wiki/Edwin_Plimpton_Adams
+# Coauthors whose names link to their homepage in the publication list.
+# Keyed by last name; `firstname` lists the spellings used in papers.bib.
+# Only add entries whose URL you have verified -- a stale link here shows up
+# on every paper that author appears on.
 
-"Podolsky":
-  - firstname: ["Boris", "B.", "B. Y.", "Boris Yakovlevich"]
-    url: https://en.wikipedia.org/wiki/Boris_Podolsky
+"Zhao":
+  - firstname: ["Jishen"]
+    url: https://cseweb.ucsd.edu/~jzhao/
+  - firstname: ["Yujie"]
+    url: https://norahyujiezhao.github.io/
 
-"Rosen":
-  - firstname: ["Nathan", "N."]
-    url: https://en.wikipedia.org/wiki/Nathan_Rosen
+"Zhang":
+  - firstname: ["Hejia"]
+    url: https://hejiaz2023.github.io/
 
-"Bach": 
-  - firstname: ["Johann Sebastian", "J. S."]
-    url: https://en.wikipedia.org/wiki/Johann_Sebastian_Bach
+"Ding":
+  - firstname: ["Yufei"]
+    url: https://yufeiding.ucsd.edu/
 
-  - firstname: ["Carl Philipp Emanuel", "C. P. E."]
-    url: https://en.wikipedia.org/wiki/Carl_Philipp_Emanuel_Bach
+"Dai":
+  - firstname: ["Guohao"]
+    url: https://dai.sjtu.edu.cn/
 
-"Przibram":
-  - firstname: ["Karl"]
-    url: https://link.springer.com/article/10.1007/s00016-019-00242-z
-
-"Schrödinger":
-  - firstname: ["Erwin"]
-    url: https://en.wikipedia.org/wiki/Erwin_Schr%C3%B6dinger
-
-"Lorentz":
-  - firstname: ["Hendrik Antoon"]
-    url: https://en.wikipedia.org/wiki/Hendrik_Lorentz
-
-"Planck":
-  - firstname: ["Max"]
-    url: https://en.wikipedia.org/wiki/Max_Planck
+"Wei":
+  - firstname: ["Chiyue"]
+    url: https://dubcyfor3.github.io/

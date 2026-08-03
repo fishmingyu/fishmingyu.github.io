@@ -1,20 +1,20 @@
+# Reviewing and program-committee service, newest first.
+# NOTE(zhongming): this list stops at KDD'25 (reviewed Aug. 2024). Add anything
+# from 2025-2026 -- ICML / NeurIPS / MLSys / ASPLOS reviewing, workshop PCs, etc.
+
 services:
-  - title: "KDD'25 Paper Reviewer Committee"
+  - title: "KDD'25 Program Committee"
     description: "31st ACM SIGKDD Conference on Knowledge Discovery and Data Mining"
     date: "Aug. 2024"
-    icon: "fas fa-file-alt"
-    
-  - title: "ES-FoMo-II'24 Poster Reviewer Committee"
-    description: "2nd Workshop on Efficient Systems for Foundation Models"
-    date: "June 2024"
-    icon: "fas fa-clipboard-list"
-    
-  - title: "KDD'24 Paper Reviewer Committee"
+
+  - title: "ES-FoMo-II'24 Poster Reviewer"
+    description: "2nd Workshop on Efficient Systems for Foundation Models @ ICML"
+    date: "Jun. 2024"
+
+  - title: "KDD'24 Program Committee"
     description: "30th ACM SIGKDD Conference on Knowledge Discovery and Data Mining"
     date: "Mar. 2024"
-    icon: "fas fa-file-alt"
-    
-  - title: "KDD'23 Paper Reviewer Committee"
+
+  - title: "KDD'23 Program Committee"
     description: "29th ACM SIGKDD Conference on Knowledge Discovery and Data Mining"
     date: "Apr. 2023"
-    icon: "fas fa-file-alt"

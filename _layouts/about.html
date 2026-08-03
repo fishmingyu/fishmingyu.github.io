@@ -3,68 +3,79 @@ layout: default
 ---
 
 <!-- about.html -->
-      <div class="post">
-        <header class="post-header">
-          <h1 class="post-title">
-           {% if site.title == "blank" -%}<span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }} {{ site.last_name }}{%- else -%}{{ site.title }}{%- endif %}
-          </h1>
-          <p class="desc">{{ page.subtitle }}</p>
-        </header>
+<div class="post">
 
-        <article>
-          {% if page.profile -%}
-          <div class="profile float-{%- if page.profile.align == 'left' -%}left{%- else -%}right{%- endif -%}">
-            {%- if page.profile.image %}
-              {%- assign profile_image_path = page.profile.image | prepend: 'assets/img/' -%}
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero__body">
+      {%- comment -%}
+        Join on a filtered array rather than interpolating the three name
+        fields: `middle_name` is usually blank and would leave a double space.
+      {%- endcomment -%}
+      {%- assign full_name = site.first_name | append: " " | append: site.middle_name | append: " " | append: site.last_name | split: " " | join: " " -%}
+      <h1 class="hero__name">{% if site.title == "blank" %}{{ full_name }}{% else %}{{ site.title }}{% endif %}</h1>
 
-              {% if page.profile.image_circular %}
-                {%- assign profile_image_class = "img-fluid z-depth-1 rounded-circle" -%}
-              {% else %}
-                {%- assign profile_image_class = "img-fluid z-depth-1 rounded" -%}
-              {% endif %}
+      <div class="hero__meta">
+        {%- if page.role %}<span>{{ page.role }}</span>{% endif -%}
+        {%- if page.org %}<span class="sep">@</span><a href="{{ page.org_url }}">{{ page.org }}</a>{% endif -%}
+        {%- if page.advisor %}<span class="sep">&middot;</span><span>advised by <a href="{{ page.advisor_url }}">{{ page.advisor }}</a></span>{% endif -%}
+      </div>
 
-              {% include figure.html 
-              path=profile_image_path 
-              class=profile_image_class
-              alt=page.profile.image -%}
-            {% endif -%}
-            {%- if page.profile.address %}
-            <div class="address">
-              {{ page.profile.address }}
-            </div>
-            {%- endif %}
-          </div>
-          {%- endif %}
+      {%- if page.tagline %}
+      <p class="hero__tagline">{{ page.tagline }}</p>
+      {%- endif %}
 
-          <div class="clearfix">
-            {{ content }}
-          </div>
+      {%- if site.scholar_stats %}
+      <div class="hero__stats">
+        <a href="https://scholar.google.com/citations?user={{ site.scholar_userid }}">
+          {%- for stat in site.scholar_stats -%}
+          <span class="stat"><b>{{ stat.value }}</b>{{ stat.label }}</span>
+          {%- endfor -%}
+        </a>
+      </div>
+      {%- endif %}
+    </div>
 
-          <!-- News -->
-          {% if page.news -%}
-            <h2><a href="{{ '/news/' | relative_url }}" style="color: inherit;">news</a></h2>
-            {%- include news.html %}
-          {%- endif %}
+    {%- if page.profile and page.profile.image %}
+    <div class="hero__figure">
+      {%- assign profile_image_path = page.profile.image | prepend: 'assets/img/' -%}
+      {% include figure.html
+         path=profile_image_path
+         class="img-fluid"
+         alt=page.profile.image -%}
+      {%- if page.profile.address %}
+      <div class="hero__location">{{ page.profile.address | strip_html | strip }}</div>
+      {%- endif %}
+    </div>
+    {%- endif %}
+  </div>
 
-          <!-- Selected papers -->
-          {% if page.selected_papers -%}
-            <h2><a href="{{ '/publications/' | relative_url }}" style="color: inherit;">selected publications</a></h2>
-            {%- include selected_papers.html %}
-          {%- endif %}
+  <article>
+    {{ content }}
 
-          <!-- Social -->
-          {%- if page.social %}
-            <div class="social">
-              <div class="contact-icons">
-                {% include social.html %}
-              </div>
+    <!-- News -->
+    {% if page.news -%}
+      <h2><a href="{{ '/news/' | relative_url }}">news</a></h2>
+      {%- include news.html %}
+    {%- endif %}
 
-              <div class="contact-note">
-                {{ site.contact_note }}
-              </div>
-              
-            </div>
-          {%- endif %}
-        </article>
+    <!-- Selected papers -->
+    {% if page.selected_papers -%}
+      <h2><a href="{{ '/publications/' | relative_url }}">selected publications</a></h2>
+      {%- include selected_papers.html %}
+    {%- endif %}
+
+    <!-- Social -->
+    {%- if page.social %}
+      <div class="social">
+        <div class="contact-icons">
+          {% include social.html %}
+        </div>
+        {%- if site.contact_note %}
+        <div class="contact-note">{{ site.contact_note }}</div>
+        {%- endif %}
+      </div>
+    {%- endif %}
+  </article>
 
 </div>

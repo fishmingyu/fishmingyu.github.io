@@ -1,6 +1,43 @@
-"AJP":
-  url: https://aapt.scitation.org/journal/ajp
-  color: "#00369f"
+# Venue badges shown next to each publication.
+# `color` is the badge background; keep these in the same family as the
+# accent palette in _sass/_variables.scss.
 
-"PhysRev":
-  url: https://journals.aps.org/
+"ICML":
+  url: https://icml.cc/
+  color: "#0f6c5a"
+
+"MLSys":
+  url: https://mlsys.org/
+  color: "#1f5f8b"
+
+"MICRO":
+  url: https://www.microarch.org/
+  color: "#6b3fa0"
+
+"DAC":
+  url: https://www.dac.com/
+  color: "#8a4b1f"
+
+"DATE":
+  url: https://www.date-conference.com/
+  color: "#7a3b52"
+
+"WWW":
+  url: https://www2023.thewebconf.org/
+  color: "#2a5c8a"
+
+"CVPR":
+  url: https://cvpr.thecvf.com/
+  color: "#1b6b7a"
+
+"ICCD":
+  url: https://www.iccd-conf.com/
+  color: "#4a4f7a"
+
+"THPC":
+  url: https://link.springer.com/journal/42514
+  color: "#4a5568"
+
+"arXiv":
+  url: https://arxiv.org/
+  color: "#3d4451"

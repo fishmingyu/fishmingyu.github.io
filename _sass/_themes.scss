@@ -1,28 +1,83 @@
 /*******************************************************************************
  * Themes
+ *
+ * Dark is the default. `assets/js/theme.js` only switches to light when the
+ * visitor has stored that preference or their OS explicitly asks for it, so
+ * the bare `:root` block below has to carry the dark values.
  ******************************************************************************/
- 
-:root {
-  --global-bg-color: #{$white-color};
-  --global-code-bg-color: #{$code-bg-color-light};
-  --global-text-color: #{$black-color};
-  --global-text-color-light: #{$grey-color};
-  --global-theme-color: #{$purple-color};
-  --global-hover-color: #{$purple-color};
-  --global-footer-bg-color: #{$grey-color-dark};
-  --global-footer-text-color: #{$grey-color-light};
-  --global-footer-link-color: #{$white-color};
-  --global-distill-app-color: #{$grey-color};
-  --global-divider-color: rgba(0,0,0,.1);
-  --global-card-bg-color: #{$white-color};
 
+@mixin dark-tokens {
+  --global-bg-color: #{$d-bg};
+  --global-bg-elevated: #{$d-bg-elev};
+  --global-surface-color: #{$d-surface};
+  --global-surface-hover: #{$d-surface-hi};
+  --global-code-bg-color: #{$d-surface};
+  --global-text-color: #{$d-text};
+  --global-text-color-light: #{$d-text-dim};
+  --global-text-color-faint: #{$d-text-faint};
+  --global-theme-color: #{$d-accent};
+  --global-hover-color: #{$d-accent-hi};
+  --global-accent-soft: #{$d-accent-soft};
+  --global-amber-color: #{$d-amber};
+  --global-divider-color: #{$d-border};
+  --global-divider-strong: #{$d-border-hi};
+  --global-card-bg-color: #{$d-surface};
+  --global-footer-bg-color: #{$d-bg-elev};
+  --global-footer-text-color: #{$d-text-faint};
+  --global-footer-link-color: #{$d-accent};
+  --global-distill-app-color: #{$d-text-dim};
+  --global-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --global-shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.45);
+
+  color-scheme: dark;
+
+  // Only toggle visibility here -- positioning lives in _terminal.scss so the
+  // icon stays centred in the navbar regardless of which one is showing.
   .fa-sun {
-    display : none;
+    display: block;
   }
   .fa-moon {
-    padding-left: 10px;
-    padding-top: 12px;
-    display : block;
+    display: none;
+  }
+
+  .repo-img-light {
+    display: none;
+  }
+  .repo-img-dark {
+    display: block;
+  }
+}
+
+@mixin light-tokens {
+  --global-bg-color: #{$l-bg};
+  --global-bg-elevated: #{$l-bg-elev};
+  --global-surface-color: #{$l-surface};
+  --global-surface-hover: #{$l-surface-hi};
+  --global-code-bg-color: #{$l-surface};
+  --global-text-color: #{$l-text};
+  --global-text-color-light: #{$l-text-dim};
+  --global-text-color-faint: #{$l-text-faint};
+  --global-theme-color: #{$l-accent};
+  --global-hover-color: #{$l-accent-hi};
+  --global-accent-soft: #{$l-accent-soft};
+  --global-amber-color: #{$l-amber};
+  --global-divider-color: #{$l-border};
+  --global-divider-strong: #{$l-border-hi};
+  --global-card-bg-color: #{$l-bg-elev};
+  --global-footer-bg-color: #{$l-surface};
+  --global-footer-text-color: #{$l-text-dim};
+  --global-footer-link-color: #{$l-accent};
+  --global-distill-app-color: #{$l-text-dim};
+  --global-shadow: 0 1px 2px rgba(20, 22, 26, 0.06);
+  --global-shadow-lg: 0 12px 32px rgba(20, 22, 26, 0.10);
+
+  color-scheme: light;
+
+  .fa-sun {
+    display: none;
+  }
+  .fa-moon {
+    display: block;
   }
 
   .repo-img-light {
@@ -33,33 +88,14 @@
   }
 }
 
-html[data-theme='dark'] {
-  --global-bg-color: #{$grey-color-dark};
-  --global-code-bg-color: #{$code-bg-color-dark};
-  --global-text-color: #{$grey-color-light};
-  --global-text-color-light: #{$grey-color-light};
-  --global-theme-color: #{$cyan-color};
-  --global-hover-color: #{$cyan-color};
-  --global-footer-bg-color: #{$grey-color-light};
-  --global-footer-text-color: #{$grey-color-dark};
-  --global-footer-link-color: #{$black-color};
-  --global-distill-app-color: #{$grey-color-light};
-  --global-divider-color: #424246;
-  --global-card-bg-color: #{$grey-900};
+:root {
+  @include dark-tokens;
+}
 
-  .fa-sun {
-    padding-left: 10px;
-    padding-top: 12px;
-    display : block;
-  }
-  .fa-moon {
-    display : none;
-  }
+html[data-theme="dark"] {
+  @include dark-tokens;
+}
 
-  .repo-img-light {
-    display: none;
-  }
-  .repo-img-dark {
-    display: block;
-  }
+html[data-theme="light"] {
+  @include light-tokens;
 }
