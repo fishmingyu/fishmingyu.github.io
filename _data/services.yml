@@ -5,6 +5,10 @@ services:
     description: "ACM International Conference on Architectural Support for Programming Languages and Operating Systems"
     date: "Jan. 2026"
 
+  - title: "ASPLOS'26 Spring Artifact Evaluation Committee"
+    description: "ACM International Conference on Architectural Support for Programming Languages and Operating Systems"
+    date: "Aug. 2025"
+
   - title: "KDD'25 Program Committee"
     description: "31st ACM SIGKDD Conference on Knowledge Discovery and Data Mining"
     date: "Aug. 2024"
