@@ -28,12 +28,7 @@ social: true
 
 I am a fifth-year Ph.D. candidate at UC San Diego, advised by
 [Prof. Jishen Zhao](https://cseweb.ucsd.edu/~jzhao/), and since June 2026 a
-research intern at **NVIDIA**.
-{% comment %}
-  TODO(zhongming): swap "research intern" for your actual title if it differs.
-  The June 15, 2026 start date is confirmed. Liquid comment, not HTML -- this
-  must not reach the published source.
-{% endcomment %}
+**Deep Learning Compiler Intern** at NVIDIA.
 Before UCSD I received my B.E. from the Department of Electronic Engineering at
 Tsinghua University.
 

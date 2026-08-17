@@ -34,8 +34,7 @@
 - title: Experience
   type: time_table
   contents:
-    # TODO(zhongming): swap in your actual title if it is not "Research Intern".
-    - title: Research Intern
+    - title: Deep Learning Compiler Intern
       institution: NVIDIA
       year: Jun. 2026 - present
     - title: Student Researcher
