@@ -45,16 +45,16 @@ hardware, [generating](https://arxiv.org/abs/2412.07822) and
 [verifying](https://arxiv.org/abs/2602.16953) RTL.
 
 The same lens started in sparse computation — [dgSPARSE](https://dgsparse.github.io/),
-[CogDL](https://cogdl.ai/), GPU sparse linear algebra — and still shows up there,
-most recently in [sparse attention](https://arxiv.org/abs/2602.05191) for
-long-context inference.
+[CogDL](https://cogdl.ai/), GPU sparse linear algebra — and now extends to
+[compiler-agent co-design for frontier GPU kernels](https://arxiv.org/abs/2608.12629)
+and [sparse attention](https://arxiv.org/abs/2602.05191) for long-context inference.
 
 <ul class="focus-list">
   <li><b>Agent infrastructure</b> — repository context serving, incremental indexes, retrieval that respects code structure</li>
   <li><b>Agent memory</b> — multi-agent memory hierarchies, consistency, long-horizon retention</li>
   <li><b>Evaluation</b> — benchmarks for continuous software evolution, not one-shot patches</li>
   <li><b>Agents for hardware</b> — RTL generation and verification, learning from execution feedback</li>
-  <li><b>ML systems</b> — sparse kernels, sparse attention, GPU compilation</li>
+  <li><b>ML systems</b> — compiler-agent co-design, evolving GPU kernels, sparse attention</li>
 </ul>
 
 I also maintain [SysEvol](https://github.com/sysevol-ai), an open-source effort
@@ -63,6 +63,18 @@ around AI-driven system evolution.
 ## current work
 
 <div class="work-grid">
+  <a class="work-card" href="{{ '/projects/cake/' | relative_url }}">
+    <div class="work-card__head">
+      <span class="work-card__name">CAKE</span>
+      <span class="work-card__stars">arXiv '26</span>
+    </div>
+    <p class="work-card__desc">A compiler-agent co-design where agents evolve frontier GPU kernels through a typed, hardware-explicit schedule IR.</p>
+    <div class="work-card__tags">
+      <span class="tag">arXiv 2608.12629</span>
+      <span class="tag">compiler-agent</span>
+      <span class="tag">gpu kernels</span>
+    </div>
+  </a>
   <a class="work-card" href="https://codenib.ai">
     <div class="work-card__head">
       <span class="work-card__name">CodeNib</span>
