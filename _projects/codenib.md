@@ -4,7 +4,7 @@ title: CodeNib
 description: A multi-view data system for serving repository context to coding agents.
 category: agent infrastructure
 importance: 1
-badge: "★ 66"
+badge: "★ 82"
 tags: [python, indexing, retrieval, mcp]
 github: https://github.com/sysevol-ai/CodeNib
 website: https://codenib.ai

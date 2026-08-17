@@ -78,7 +78,7 @@ scholar_userid: 68sFa3IAAAAJ # your Google Scholar ID
 # refresh them from the Google Scholar profile every few months, or delete the
 # block to hide the strip entirely.
 scholar_stats:
-  - value: 20
+  - value: 20+
     label: papers
   - value: 600+
     label: citations

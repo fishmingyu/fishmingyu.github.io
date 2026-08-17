@@ -78,7 +78,7 @@ around AI-driven system evolution.
   <a class="work-card" href="https://codenib.ai">
     <div class="work-card__head">
       <span class="work-card__name">CodeNib</span>
-      <span class="work-card__stars">★ 66</span>
+      <span class="work-card__stars">★ 82</span>
     </div>
     <p class="work-card__desc">A multi-view data system that serves repository context to coding agents — lexical, dense, and structural views that update incrementally instead of rebuilding.</p>
     <div class="work-card__tags">
