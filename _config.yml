@@ -73,17 +73,6 @@ mastodon_username: # your mastodon instance+username in the format instance.tld/
 linkedin_username: fishmingyuee # your LinkedIn user name
 telegram_username: # your Telegram user name
 scholar_userid: 68sFa3IAAAAJ # your Google Scholar ID
-
-# Stat strip shown under the tagline on the about page. These are static --
-# refresh them from the Google Scholar profile every few months, or delete the
-# block to hide the strip entirely.
-scholar_stats:
-  - value: 20+
-    label: papers
-  - value: 600+
-    label: citations
-  - value: 10
-    label: h-index
 semanticscholar_id: # your Semantic Scholar ID
 whatsapp_number: # your WhatsApp number (full phone number in international format. Omit any zeroes, brackets, or dashes when adding the phone number in international format.)
 orcid_id: # your ORCID ID

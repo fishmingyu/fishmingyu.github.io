@@ -50,11 +50,30 @@ The same lens started in sparse computation — [dgSPARSE](https://dgsparse.gith
 and [sparse attention](https://arxiv.org/abs/2602.05191) for long-context inference.
 
 <ul class="focus-list">
-  <li><b>Agent infrastructure</b> — repository context serving, incremental indexes, retrieval that respects code structure</li>
-  <li><b>Agent memory</b> — multi-agent memory hierarchies, consistency, long-horizon retention</li>
-  <li><b>Evaluation</b> — benchmarks for continuous software evolution, not one-shot patches</li>
-  <li><b>Agents for hardware</b> — RTL generation and verification, learning from execution feedback</li>
-  <li><b>ML systems</b> — compiler-agent co-design, evolving GPU kernels, sparse attention</li>
+  <li>
+    <b>Coding-agent infrastructure:</b>
+    <a href="https://arxiv.org/abs/2607.25431">CodeNib</a> (arXiv),
+    <a href="https://proceedings.mlr.press/v267/yu25x.html">OrcaLoca</a> (ICML'25)
+  </li>
+  <li>
+    <b>Agent memory and evaluation:</b>
+    <a href="https://arxiv.org/abs/2603.13428">SWE-Milestone</a> (ICML'26),
+    <a href="https://arxiv.org/abs/2602.22769">AMA-Bench</a> (ICML'26),
+    <a href="https://arxiv.org/abs/2603.10062">Multi-Agent Memory</a> (arXiv)
+  </li>
+  <li>
+    <b>Agents for hardware design and verification:</b>
+    <a href="https://arxiv.org/abs/2602.16953">LLM4Cov</a> (ICML'26),
+    <a href="https://arxiv.org/abs/2412.07822">MAGE</a> (DAC'25),
+    <a href="https://arxiv.org/abs/2506.12200">PRO-V-R1</a> (DAC'26)
+  </li>
+  <li>
+    <b>Hardware-aware ML systems:</b>
+    <a href="https://arxiv.org/abs/2608.12629">CAKE</a> (arXiv),
+    <a href="https://arxiv.org/abs/2602.05191">Double-P</a> (arXiv),
+    <a href="https://dl.acm.org/doi/10.1145/3613424.3614303">TorchSparse++</a> (MICRO'23),
+    <a href="https://proceedings.mlsys.org/paper_files/paper/2023/hash/c0987e6b6da2428e8cd43efa74790ccb-Abstract-mlsys2023.html">HyperGef</a> (MLSys'23)
+  </li>
 </ul>
 
 I also maintain [SysEvol](https://github.com/sysevol-ai), an open-source effort

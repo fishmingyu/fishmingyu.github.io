@@ -60,12 +60,24 @@
   abstract    = {Execution-aware LLM agents offer a promising paradigm for learning from tool feedback, but in hardware verification such feedback is expensive and slow, relying on industrial simulators and non-differentiable execution signals. LLM4Cov is an offline agent-learning framework combining execution-validated data curation, policy-aware agentic data synthesis, and worst-state-prioritized sampling. A compact 4B model reaches a 69.2% coverage pass rate under agentic evaluation, outperforming its teacher by 5.3% and competing with models an order of magnitude larger.}
 }
 
-@article{zhao2026amabench,
+@inproceedings{zhao2026prov,
+  title       = {PRO-V-R1: Reasoning Enhanced Programming Agent for RTL Verification},
+  author      = {Zhao, Yujie and Wu, Zhijing and Yuan, Boqin and Yu, Zhongming and Zhang, Hejia and Ni, Wentao and Ho, Chia-Tung and Ren, Haoxing and Zhao, Jishen},
+  booktitle   = {Proceedings of the 63rd ACM/IEEE Design Automation Conference},
+  year        = {2026},
+  abbr        = {DAC},
+  bibtex_show = {true},
+  arxiv       = {2506.12200},
+  code        = {https://github.com/stable-lab/Pro-V},
+  abstract    = {PRO-V-R1 is the first open-source trainable agentic framework for autonomous RTL verification. It achieves a 57.7% functional correctness rate and 34.0% robust fault detection, substantially improving on baselines and matching proprietary LLM capability on several benchmarks.}
+}
+
+@inproceedings{zhao2026amabench,
   title       = {AMA-Bench: Evaluating Long-Horizon Memory for Agentic Applications},
   author      = {Zhao, Yujie and Yuan, Boqin and Huang, Junbo and Yuan, Haocheng and Yu, Zhongming and Xu, Haozhou and Hu, Lanxiang and Shankarampeta, Abhilash and Huang, Zimeng and Ni, Wentao and Tian, Yuandong and Zhao, Jishen},
-  journal     = {arXiv preprint arXiv:2602.22769},
+  booktitle   = {Proceedings of the 43rd International Conference on Machine Learning},
   year        = {2026},
-  abbr        = {arXiv},
+  abbr        = {ICML},
   bibtex_show = {true},
   arxiv       = {2602.22769},
   website     = {https://ama-bench.github.io},
@@ -125,18 +137,6 @@
   html        = {https://arxiv.org/abs/2412.07822},
   arxiv       = {2412.07822},
   bibtex_show = {true}
-}
-
-@article{zhao2025prov,
-  title       = {PRO-V-R1: Reasoning Enhanced Programming Agent for RTL Verification},
-  author      = {Zhao, Yujie and Wu, Zhijing and Yuan, Boqin and Yu, Zhongming and Zhang, Hejia and Ni, Wentao and Ho, Chia-Tung and Ren, Haoxing and Zhao, Jishen},
-  journal     = {arXiv preprint arXiv:2506.12200},
-  year        = {2025},
-  abbr        = {arXiv},
-  bibtex_show = {true},
-  arxiv       = {2506.12200},
-  code        = {https://github.com/stable-lab/Pro-V},
-  abstract    = {PRO-V-R1 is the first open-source trainable agentic framework for autonomous RTL verification. It achieves a 57.7% functional correctness rate and 34.0% robust fault detection, substantially improving on baselines and matching proprietary LLM capability on several benchmarks.}
 }
 
 % -----------------------------------------------------------------------------
