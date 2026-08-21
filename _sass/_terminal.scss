@@ -842,6 +842,16 @@ progress,
       transition: color 0.15s ease;
     }
     a:hover i::before { color: var(--global-theme-color); }
+
+    .x-social-icon {
+      width: 0.88em;
+      height: 0.88em;
+      vertical-align: -0.04em;
+      fill: currentColor;
+      color: var(--global-text-color-light);
+      transition: color 0.15s ease;
+    }
+    a:hover .x-social-icon { color: var(--global-theme-color); }
   }
 
   .contact-note {

@@ -51,16 +51,16 @@
     {%- endif %}
     <meta property="og:locale" content="{{ site.lang }}" />
 
-    <!-- Twitter card -->
+    <!-- X card metadata (the protocol still uses twitter:* names) -->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="{%- if page.title -%}{{ page.title }}{%- else -%}{{ title }}{%- endif -%}" />
     <meta name="twitter:description" content="{%- if page.description -%}{{ page.description }}{%- else -%}{{ site.description }}{%- endif -%}" />
     {% if page.og_image or site.og_image -%}
     <meta name="twitter:image" content="{%- if page.og_image -%}{{ page.og_image }}{%- else -%}{{ site.og_image }}{%- endif -%}" />
     {%- endif %}
-    {% if site.twitter_username -%}
-    <meta name="twitter:site" content="@{{ site.twitter_username }}" />
-    <meta name="twitter:creator" content="@{{ site.twitter_username }}" />
+    {% if site.x_username -%}
+    <meta name="twitter:site" content="@{{ site.x_username }}" />
+    <meta name="twitter:creator" content="@{{ site.x_username }}" />
     {%- endif %}
 {%- endif %}
 
@@ -101,8 +101,8 @@
         {%- capture link -%}https://www.linkedin.com/in/{{ site.linkedin_username }}{%- endcapture -%}
         {%- assign sameaslinks = sameaslinks | push: link -%}
     {%- endif -%}
-    {%- if site.twitter_username -%}
-        {%- capture link -%}https://twitter.com/{{ site.twitter_username }}{%- endcapture -%}
+    {%- if site.x_username -%}
+        {%- capture link -%}https://x.com/{{ site.x_username }}{%- endcapture -%}
         {%- assign sameaslinks = sameaslinks | push: link -%}
     {%- endif -%}
     {%- if site.medium_username -%}
